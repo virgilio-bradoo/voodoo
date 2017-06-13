@@ -1,0 +1,230 @@
+Command Line
+=========================
+
+voodoo
+------
+
+Usage:
+    voodoo [SWITCHES] [SUBCOMMAND [SWITCHES]] args...
+
+Meta-switches
+    --dry-run                Dry run mode
+    -h, --help               Prints this help message and quits
+    --help-all               Print help messages of all subcommands and quit
+    -v, --version            Prints the program's version and quits
+    --verbose                Verbose mode
+
+Switches
+    -e, --env VALUE      Environment flag
+
+============== ==========
+Subcommands:
+============== ==========
+    build                    Build or rebuild services
+    deploy                   Deploy your application
+    down                     Stop all services
+    kill                     Kill all running container of the project
+    logs                     View output from containers
+    migrate                  Migrate your odoo project  First you need to
+                             checkout the voodoo-upgrade template available here
+                             : https://github.com/akretion/voodoo-upgrade (It's
+                             a template a voodoo but based on open-upgrade'
+                             Then go inside the repository clonned and launch
+                             the migration  * For migrating from 6.1 to 8.0 run:
+                             voodoo migrate -b 7.0,8.0 * For migrating from 6.1
+                             to 9.0 run: voodoo migrate -b 7.0,8.0,9.0 * For
+                             migrating and loading a database run: voodoo
+                             migrate -b 7.0,8.0 db-file=tomigrate.dump
+    new                      Create a new project
+    open                     Open a new session inside your dev container
+    ps                       List containers
+    pull                     Pulls service images
+    run                      Start services and enter in your dev container
+                             After running the command you will be inside the
+                             container and you will have access to the ak cmd
+                             (see ak documenation) main command are 'ak run' and
+                             'ak build'  Note: the container is accessible with
+                             the following url : http://my_project.vd and
+                             http://my_plugin.my_project.vd
+    up                       Start all services
+============== ==========
+
+build
+-----
+
+Build or rebuild services
+
+Usage:
+    voodoo build [SWITCHES] args...
+
+Hidden-switches
+    -h, --help      Prints this help message and quits
+
+
+
+deploy
+------
+
+Deploy your application
+
+Usage:
+    voodoo deploy [SWITCHES] args...
+
+Hidden-switches
+    -h, --help      Prints this help message and quits
+
+
+
+down
+----
+
+Stop all services
+
+Usage:
+    voodoo down [SWITCHES] args...
+
+Hidden-switches
+    -h, --help      Prints this help message and quits
+
+
+
+kill
+----
+
+Kill all running container of the project
+
+Usage:
+    voodoo kill [SWITCHES] args...
+
+Hidden-switches
+    -h, --help      Prints this help message and quits
+
+
+
+logs
+----
+
+View output from containers
+
+Usage:
+    voodoo logs [SWITCHES] args...
+
+Hidden-switches
+    -h, --help      Prints this help message and quits
+
+
+
+migrate
+-------
+
+Migrate your odoo project
+
+First you need to checkout the voodoo-upgrade template
+available here : https://github.com/akretion/voodoo-upgrade
+(It's a template a voodoo but based on open-upgrade'
+
+Then go inside the repository clonned and launch the migration
+
+* For migrating from 6.1 to 8.0 run:
+    voodoo migrate -b 7.0,8.0
+* For migrating from 6.1 to 9.0 run:
+    voodoo migrate -b 7.0,8.0,9.0
+* For migrating and loading a database run:
+    voodoo migrate -b 7.0,8.0 db-file=tomigrate.dump
+
+Usage:
+    voodoo migrate [SWITCHES] 
+
+Hidden-switches
+    -h, --help                  Prints this help message and quits
+
+Switches
+    -b, --branch VALUE      Branch to apply split by comma ex: 7.0,8.0;
+                                required
+    --db-file VALUE         Sets an attribute
+
+
+
+new
+---
+
+Create a new project
+
+Usage:
+    voodoo new [SWITCHES] name
+
+Hidden-switches
+    -h, --help      Prints this help message and quits
+
+
+
+open
+----
+
+Open a new session inside your dev container
+
+Usage:
+    voodoo open [SWITCHES] args...
+
+Hidden-switches
+    -h, --help      Prints this help message and quits
+
+
+
+ps
+--
+
+List containers
+
+Usage:
+    voodoo ps [SWITCHES] args...
+
+Hidden-switches
+    -h, --help      Prints this help message and quits
+
+
+
+pull
+----
+
+Pulls service images
+
+Usage:
+    voodoo pull [SWITCHES] args...
+
+Hidden-switches
+    -h, --help      Prints this help message and quits
+
+
+
+run
+---
+
+Start services and enter in your dev container
+
+After running the command you will be inside the container and
+you will have access to the ak cmd (see ak documenation)
+main command are 'ak run' and 'ak build'
+
+Note: the container is accessible with the following url :
+http://my_project.vd and http://my_plugin.my_project.vd
+
+Usage:
+    voodoo run [SWITCHES] args...
+
+Hidden-switches
+    -h, --help      Prints this help message and quits
+
+
+
+up
+--
+
+Start all services
+
+Usage:
+    voodoo up [SWITCHES] args...
+
+Hidden-switches
+    -h, --help      Prints this help message and quits
+

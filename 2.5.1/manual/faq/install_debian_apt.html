@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Install custom debian package &#8212; Python  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.3.6/sandstone/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Issue help" href="issue.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Voodoo</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="http://akretion.com">Done by Akretion</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Doc <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#how-it-works">How it works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#automatic-dns-resolution">Automatic DNS resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#another-usage">Another usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Install on Ubuntu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#prerequisite">Prerequisite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#install-or-upgrade-your-docker">Install or upgrade your Docker:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#install-voodoo">Install Voodoo:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#configuration">Configuration:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#env-dev-prod-preprod">env [dev, prod, preprod]:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#maintainer-quality-tools-url">maintainer_quality_tools [url]:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#shared-eggs-true-or-false">shared_eggs [True or False]:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#shared-gems-true-or-false">shared_gems [True or False]:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#odoo-url">odoo [url]:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto/cmd.html">Command Line</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#voodoo">voodoo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#build">build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#deploy">deploy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#down">down</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#kill">kill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#logs">logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#migrate">migrate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#new">new</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#open">open</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#ps">ps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#pull">pull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#run">run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#up">up</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FAQ</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="issue.html">Issue help</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="issue.html#what-should-i-do-if-i-have-this-message-after-voodoo-run">What should I do if I have this message after <code class="docutils literal"><span class="pre">`voodoo</span> <span class="pre">run`</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="issue.html#what-process-manage-my-voodoo-container">What process manage my voodoo container ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="issue.html#what-do-to-if-you-have-this-stack-trace">What do to if you have this stack trace?</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Install custom debian package</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../../_sources/manual/faq/install_debian_apt.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="install-custom-debian-package">
+<h1>Install custom debian package<a class="headerlink" href="#install-custom-debian-package" title="Permalink to this headline">¶</a></h1>
+<p>If you need some custom debian package in your image you can easily add one using a DockerFile see documentation here : <a class="reference external" href="https://docs.docker.com/engine/reference/builder/">https://docs.docker.com/engine/reference/builder/</a></p>
+<p>Here is an example of custom DockerFile to install the package &#8220;my_debian_package_to_install&#8221;.
+Be careful to not forget to switch the user before and after installing the package.</p>
+<p><a href="#id1"><span class="problematic" id="id2">``</span></a>`
+FROM akretion/voodoo:latest
+USER root
+RUN DEBIAN_FRONTEND=noninteractive &amp;&amp; </p>
+<blockquote>
+<div>apt-get update &amp;&amp; apt-get install -y my_debian_package_to_install &amp;&amp; apt-get clean</div></blockquote>
+<p>USER odoo
+<a href="#id3"><span class="problematic" id="id4">``</span></a><a href="#id5"><span class="problematic" id="id6">`</span></a></p>
+<p>Then you need to replace the following information in your dev.docker-compose.yml and docker-compose.yml
+<code class="docutils literal"><span class="pre">`</span>
+<span class="pre">image:</span> <span class="pre">akretion/voodoo:latest</span>
+<span class="pre">`</span></code>
+By
+<code class="docutils literal"><span class="pre">`</span>
+<span class="pre">build:</span> <span class="pre">.</span>
+<span class="pre">`</span></code></p>
+<p>Then</p>
+<p><code class="docutils literal"><span class="pre">`</span>
+<span class="pre">voodoo</span> <span class="pre">build</span>
+<span class="pre">`</span></code></p>
+<p>to build a custom image</p>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright Akretion.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

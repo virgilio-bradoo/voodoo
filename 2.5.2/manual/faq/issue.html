@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Issue help &#8212; Python  documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.3.6/sandstone/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Install custom debian package" href="install_debian_apt.html" />
+    <link rel="prev" title="FAQ" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Voodoo</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="http://akretion.com">Done by Akretion</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Doc <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#how-it-works">How it works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#automatic-dns-resolution">Automatic DNS resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction.html#another-usage">Another usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Install on Ubuntu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#prerequisite">Prerequisite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#install-or-upgrade-your-docker">Install or upgrade your Docker:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#install-voodoo">Install Voodoo:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation.html#configuration">Configuration:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#verbose-true-false">verbose [True, False]:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#env-dev-prod-preprod">env [dev, prod, preprod]:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#maintainer-quality-tools-url">maintainer_quality_tools [url]:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#shared-eggs-true-or-false">shared_eggs [True or False]:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#shared-gems-true-or-false">shared_gems [True or False]:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation.html#odoo-url">odoo [url]:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto/cmd.html">Command Line</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#voodoo">voodoo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#build">build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#deploy">deploy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#down">down</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#kill">kill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#logs">logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#migrate">migrate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#new">new</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#open">open</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#ps">ps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#pull">pull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#run">run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/cmd.html#up">up</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FAQ</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Issue help</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-should-i-do-if-i-have-this-message-after-voodoo-run">What should I do if I have this message after <code class="docutils literal"><span class="pre">`voodoo</span> <span class="pre">run`</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-process-manage-my-voodoo-container">What process manage my voodoo container ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#you-fail-to-access-to-my-project-vd">You fail to access to my_project.vd ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-do-to-if-you-have-this-stack-trace">What do to if you have this stack trace?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="install_debian_apt.html">Install custom debian package</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../../_sources/manual/faq/issue.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="issue-help">
+<h1>Issue help<a class="headerlink" href="#issue-help" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-should-i-do-if-i-have-this-message-after-voodoo-run">
+<h2>What should I do if I have this message after <code class="docutils literal"><span class="pre">`voodoo</span> <span class="pre">run`</span></code><a class="headerlink" href="#what-should-i-do-if-i-have-this-message-after-voodoo-run" title="Permalink to this headline">¶</a></h2>
+<img alt="https://cloud.githubusercontent.com/assets/1853434/6959305/b73aaec4-d917-11e4-9f45-00d1332901a2.png" src="https://cloud.githubusercontent.com/assets/1853434/6959305/b73aaec4-d917-11e4-9f45-00d1332901a2.png" />
+<p>Something wrong have occured with your docker server please run</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>sudo service docker.io restart
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-process-manage-my-voodoo-container">
+<h2>What process manage my voodoo container ?<a class="headerlink" href="#what-process-manage-my-voodoo-container" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>voodoo ps
+</pre></div>
+</div>
+<p>to kill your all process use</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>voodoo <span class="nb">kill</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="you-fail-to-access-to-my-project-vd">
+<h2>You fail to access to my_project.vd ?<a class="headerlink" href="#you-fail-to-access-to-my-project-vd" title="Permalink to this headline">¶</a></h2>
+<p>Maybe the configuration of /etc/resolv.conf have been refresh (change network connection)</p>
+<dl class="docutils">
+<dt>If it the case:</dt>
+<dd><ul class="first last simple">
+<li>if you are curious you can check by ourself if the following line is in the file /etc/resolv.conf</li>
+<li>just exist from voodoo and launch voodoo run and everything will be back</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="what-do-to-if-you-have-this-stack-trace">
+<h2>What do to if you have this stack trace?<a class="headerlink" href="#what-do-to-if-you-have-this-stack-trace" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>Renato:  renato@renato-ultrabook:~$ voodoo new project
+Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+ File <span class="s2">&quot;/usr/local/bin/voodoo&quot;</span>, line <span class="m">5</span>, in &lt;module&gt;
+   from pkg_resources import load_entry_point
+ File <span class="s2">&quot;/usr/local/lib/python2.7/dist-packages/pkg_resources/__init__.py&quot;</span>, line <span class="m">3074</span>, in &lt;module&gt;
+   @_call_aside
+ File <span class="s2">&quot;/usr/local/lib/python2.7/dist-packages/pkg_resources/__init__.py&quot;</span>, line <span class="m">3060</span>, in _call_aside
+   f<span class="o">(</span>*args, **kwargs<span class="o">)</span>
+ File <span class="s2">&quot;/usr/local/lib/python2.7/dist-packages/pkg_resources/__init__.py&quot;</span>, line <span class="m">3087</span>, in _initialize_master_working_set
+   <span class="nv">working_set</span> <span class="o">=</span> WorkingSet._build_master<span class="o">()</span>
+ File <span class="s2">&quot;/usr/local/lib/python2.7/dist-packages/pkg_resources/__init__.py&quot;</span>, line <span class="m">647</span>, in _build_master
+   <span class="k">return</span> cls.build_from_requirements<span class="o">(</span>__requires_<span class="o">)</span>
+ File <span class="s2">&quot;/usr/local/lib/python2.7/dist-packages/pkg_resources/__init__.py&quot;</span>, line <span class="m">660</span>, in _build_from_requirements
+   <span class="nv">dists</span> <span class="o">=</span> ws.resolve<span class="o">(</span>reqs, Environment<span class="o">())</span>
+ File <span class="s2">&quot;/usr/local/lib/python2.7/dist-packages/pkg_resources/__init__.py&quot;</span>, line <span class="m">833</span>, in resolve
+   raise DistributionNotFound<span class="o">(</span>req, requirers<span class="o">)</span>
+pkg_resources.DistributionNotFound: The <span class="s1">&#39;requests&lt;2.6,&gt;=2.2.1&#39;</span> distribution was not found and is required by docker-compose
+</pre></div>
+</div>
+<p>The best is you update your docker-compose egg with:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>sudo pip install docker-compose -U
+</pre></div>
+</div>
+<p>and try again.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright Akretion.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

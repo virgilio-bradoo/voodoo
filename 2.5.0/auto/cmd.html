@@ -1,0 +1,556 @@
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Command Line &#8212; Python  documentation</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.3.6/sandstone/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Roadmap" href="../manual/roadmap.html" />
+    <link rel="prev" title="Install on Ubuntu" href="../manual/installation.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Voodoo</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="http://akretion.com">Done by Akretion</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Doc <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../manual/introduction.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../manual/introduction.html#how-it-works">How it works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/introduction.html#automatic-dns-resolution">Automatic DNS resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/introduction.html#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/introduction.html#another-usage">Another usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/installation.html">Install on Ubuntu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../manual/installation.html#prerequisite">Prerequisite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/installation.html#install-or-upgrade-your-docker">Install or upgrade your Docker:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/installation.html#install-voodoo">Install Voodoo:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/installation.html#configuration">Configuration:</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../manual/installation.html#env-dev-prod-preprod">env [dev, prod, preprod]:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/installation.html#maintainer-quality-tools-url">maintainer_quality_tools [url]:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/installation.html#shared-eggs-true-or-false">shared_eggs [True or False]:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/installation.html#shared-gems-true-or-false">shared_gems [True or False]:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/installation.html#odoo-url">odoo [url]:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Command Line</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#voodoo">voodoo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build">build</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deploy">deploy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#down">down</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kill">kill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#logs">logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#migrate">migrate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#new">new</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#open">open</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ps">ps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pull">pull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run">run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#up">up</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/roadmap.html">Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/faq/index.html">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../manual/faq/issue.html">Issue help</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../manual/faq/issue.html#what-should-i-do-if-i-have-this-message-after-voodoo-run">What should I do if I have this message after <code class="docutils literal"><span class="pre">`voodoo</span> <span class="pre">run`</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/faq/issue.html#what-process-manage-my-voodoo-container">What process manage my voodoo container ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../manual/faq/issue.html#what-do-to-if-you-have-this-stack-trace">What do to if you have this stack trace?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../manual/faq/install_debian_apt.html">Install custom debian package</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/auto/cmd.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="command-line">
+<h1>Command Line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="voodoo">
+<h2>voodoo<a class="headerlink" href="#voodoo" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Usage:</dt>
+<dd>voodoo [SWITCHES] [SUBCOMMAND [SWITCHES]] args...</dd>
+<dt>Meta-switches</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">--dry-run</span></kbd></td>
+<td>Dry run mode</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>Prints this help message and quits</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--help-all</span></kbd></td>
+<td>Print help messages of all subcommands and quit</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-v</span>, <span class="option">--version</span></kbd></td>
+<td>Prints the program&#8217;s version and quits</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--verbose</span></kbd></td>
+<td>Verbose mode</td></tr>
+</tbody>
+</table>
+</dd>
+<dt>Switches</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-e</span>, <span class="option">--env <var>VALUE</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Environment flag</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Subcommands:</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>build</td>
+<td>Build or rebuild services</td>
+</tr>
+<tr class="row-odd"><td>deploy</td>
+<td>Deploy your application</td>
+</tr>
+<tr class="row-even"><td>down</td>
+<td>Stop all services</td>
+</tr>
+<tr class="row-odd"><td>kill</td>
+<td>Kill all running container of the project</td>
+</tr>
+<tr class="row-even"><td>logs</td>
+<td>View output from containers</td>
+</tr>
+<tr class="row-odd"><td>migrate</td>
+<td>Migrate your odoo project  First you need to
+checkout the voodoo-upgrade template available here
+: <a class="reference external" href="https://github.com/akretion/voodoo-upgrade">https://github.com/akretion/voodoo-upgrade</a> (It&#8217;s
+a template a voodoo but based on open-upgrade&#8217;
+Then go inside the repository clonned and launch
+the migration  * For migrating from 6.1 to 8.0 run:
+voodoo migrate -b 7.0,8.0 * For migrating from 6.1
+to 9.0 run: voodoo migrate -b 7.0,8.0,9.0 * For
+migrating and loading a database run: voodoo
+migrate -b 7.0,8.0 db-file=tomigrate.dump</td>
+</tr>
+<tr class="row-even"><td>new</td>
+<td>Create a new project</td>
+</tr>
+<tr class="row-odd"><td>open</td>
+<td>Open a new session inside your dev container</td>
+</tr>
+<tr class="row-even"><td>ps</td>
+<td>List containers</td>
+</tr>
+<tr class="row-odd"><td>pull</td>
+<td>Pulls service images</td>
+</tr>
+<tr class="row-even"><td>run</td>
+<td>Start services and enter in your dev container
+After running the command you will be inside the
+container and you will have access to the ak cmd
+(see ak documenation) main command are &#8216;ak run&#8217; and
+&#8216;ak build&#8217;  Note: the container is accessible with
+the following url : <a class="reference external" href="http://my_project.vd:8069">http://my_project.vd:8069</a></td>
+</tr>
+<tr class="row-odd"><td>up</td>
+<td>Start all services</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="build">
+<h2>build<a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h2>
+<p>Build or rebuild services</p>
+<dl class="docutils">
+<dt>Usage:</dt>
+<dd>voodoo build [SWITCHES] args...</dd>
+<dt>Hidden-switches</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>Prints this help message and quits</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="deploy">
+<h2>deploy<a class="headerlink" href="#deploy" title="Permalink to this headline">¶</a></h2>
+<p>Deploy your application</p>
+<dl class="docutils">
+<dt>Usage:</dt>
+<dd>voodoo deploy [SWITCHES] args...</dd>
+<dt>Hidden-switches</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>Prints this help message and quits</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="down">
+<h2>down<a class="headerlink" href="#down" title="Permalink to this headline">¶</a></h2>
+<p>Stop all services</p>
+<dl class="docutils">
+<dt>Usage:</dt>
+<dd>voodoo down [SWITCHES] args...</dd>
+<dt>Hidden-switches</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>Prints this help message and quits</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="kill">
+<h2>kill<a class="headerlink" href="#kill" title="Permalink to this headline">¶</a></h2>
+<p>Kill all running container of the project</p>
+<dl class="docutils">
+<dt>Usage:</dt>
+<dd>voodoo kill [SWITCHES] args...</dd>
+<dt>Hidden-switches</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>Prints this help message and quits</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="logs">
+<h2>logs<a class="headerlink" href="#logs" title="Permalink to this headline">¶</a></h2>
+<p>View output from containers</p>
+<dl class="docutils">
+<dt>Usage:</dt>
+<dd>voodoo logs [SWITCHES] args...</dd>
+<dt>Hidden-switches</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>Prints this help message and quits</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="migrate">
+<h2>migrate<a class="headerlink" href="#migrate" title="Permalink to this headline">¶</a></h2>
+<p>Migrate your odoo project</p>
+<p>First you need to checkout the voodoo-upgrade template
+available here : <a class="reference external" href="https://github.com/akretion/voodoo-upgrade">https://github.com/akretion/voodoo-upgrade</a>
+(It&#8217;s a template a voodoo but based on open-upgrade&#8217;</p>
+<p>Then go inside the repository clonned and launch the migration</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>For migrating from 6.1 to 8.0 run:</dt>
+<dd>voodoo migrate -b 7.0,8.0</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>For migrating from 6.1 to 9.0 run:</dt>
+<dd>voodoo migrate -b 7.0,8.0,9.0</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>For migrating and loading a database run:</dt>
+<dd>voodoo migrate -b 7.0,8.0 db-file=tomigrate.dump</dd>
+</dl>
+</li>
+</ul>
+<dl class="docutils">
+<dt>Usage:</dt>
+<dd>voodoo migrate [SWITCHES]</dd>
+<dt>Hidden-switches</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>Prints this help message and quits</td></tr>
+</tbody>
+</table>
+</dd>
+<dt>Switches</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-b</span>, <span class="option">--branch <var>VALUE</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Branch to apply split by comma ex: 7.0,8.0;
+required</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">--db-file <var>VALUE</var></span></kbd></td>
+</tr>
+<tr><td>&#160;</td><td>Sets an attribute</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="new">
+<h2>new<a class="headerlink" href="#new" title="Permalink to this headline">¶</a></h2>
+<p>Create a new project</p>
+<dl class="docutils">
+<dt>Usage:</dt>
+<dd>voodoo new [SWITCHES] name</dd>
+<dt>Hidden-switches</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>Prints this help message and quits</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="open">
+<h2>open<a class="headerlink" href="#open" title="Permalink to this headline">¶</a></h2>
+<p>Open a new session inside your dev container</p>
+<dl class="docutils">
+<dt>Usage:</dt>
+<dd>voodoo open [SWITCHES] args...</dd>
+<dt>Hidden-switches</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>Prints this help message and quits</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="ps">
+<h2>ps<a class="headerlink" href="#ps" title="Permalink to this headline">¶</a></h2>
+<p>List containers</p>
+<dl class="docutils">
+<dt>Usage:</dt>
+<dd>voodoo ps [SWITCHES] args...</dd>
+<dt>Hidden-switches</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>Prints this help message and quits</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="pull">
+<h2>pull<a class="headerlink" href="#pull" title="Permalink to this headline">¶</a></h2>
+<p>Pulls service images</p>
+<dl class="docutils">
+<dt>Usage:</dt>
+<dd>voodoo pull [SWITCHES] args...</dd>
+<dt>Hidden-switches</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>Prints this help message and quits</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="run">
+<h2>run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h2>
+<p>Start services and enter in your dev container</p>
+<p>After running the command you will be inside the container and
+you will have access to the ak cmd (see ak documenation)
+main command are &#8216;ak run&#8217; and &#8216;ak build&#8217;</p>
+<p>Note: the container is accessible with the following url :
+<a class="reference external" href="http://my_project.vd:8069">http://my_project.vd:8069</a></p>
+<dl class="docutils">
+<dt>Usage:</dt>
+<dd>voodoo run [SWITCHES] args...</dd>
+<dt>Hidden-switches</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>Prints this help message and quits</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+<div class="section" id="up">
+<h2>up<a class="headerlink" href="#up" title="Permalink to this headline">¶</a></h2>
+<p>Start all services</p>
+<dl class="docutils">
+<dt>Usage:</dt>
+<dd>voodoo up [SWITCHES] args...</dd>
+<dt>Hidden-switches</dt>
+<dd><table class="first last docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>Prints this help message and quits</td></tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright Akretion.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
